@@ -10,7 +10,7 @@
 #else
     // Unix/Linux/macOS-specific code
     #define CLEAR_CMD "clear"
-    #define PAUSE_CMD "read -p 'Press any key to continue...'"
+    #define PAUSE_CMD "echo 'Press Enter to continue...'; read line"
 #endif
 
 using namespace GaloisField;

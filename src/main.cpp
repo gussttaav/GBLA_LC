@@ -32,6 +32,7 @@ void CreateCode(Code &cod)
 {
     Matrix g, h;
     char dec = '1';
+    bool code_loaded;
     int ford, clen, cdim;
     std::stringstream ss;
     std::ifstream cfile("codes.txt");
@@ -51,16 +52,26 @@ void CreateCode(Code &cod)
 
         switch(dec)
         {
-            case '1': std::cout << "Loading linear code from file\n"
-                                << "Enter the code name: ";
-                      std::cin >> cname;
-                      while(!ReadCodeFromFile(cfile, cname, cod) && dec != 'n')
-                      {
-                         std::cout << "ERROR: Linear code " << cname << " could not be "
-                                   << "load from file \"codes.txt\". Try again (y/n) ? ";
-                         std::cin >> dec;
+            case '1': if(!cfile.is_open()){
+                         std::cout << "ERROR: the file codes.txt is not present!" << std::endl
+                                   << "Create the file with the code especification and try again\n";
                       }
-                      if(dec == '1') dec = '5';
+                      else{
+                        std::cout << "Loading linear code from file\n";
+                        do{
+                            std::cout << "Enter the code name: ";
+                            std::cin >> cname;
+                            code_loaded = ReadCodeFromFile(cfile, cname, cod);
+                            if(!code_loaded)
+                            {
+                                std::cout << "ERROR: Linear code " << cname << " could not be "
+                                        << "load from file \"codes.txt\". Try again (y/n) ? ";
+                                std::cin >> dec;
+                            }
+                        } while(!code_loaded && dec != 'n');
+                        
+                        if(dec == '1') dec = '5';
+                      }
                 break;
 
             case '2': std::cout << "Generating linear code randomly\n\n"
