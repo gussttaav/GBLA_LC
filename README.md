@@ -4,11 +4,17 @@
 
 This project is a C++ application designed to study linear codes, particularly focusing on the **set of leader codewords** and their application to the **Code Equivalence Problem**. It is based on the research article:
 
-[**"Computing an Invariant of a Linear Code"**](https://www.springerprofessional.de/computing-an-invariant-of-a-linear-code/17808632)
+[**"Computing an Invariant of a Linear Code"**](https://link.springer.com/chapter/10.1007/978-3-030-43120-4_17)
 Lecture Notes in Computer Science, Springer, November 2019.  
 By Mijail Borges-Quintana, Miguel Ángel Borges-Trenard, Edgar Martínez-Moro, and Gustavo Torres-Guerrero.
 
-The application implements algorithms for computing leader codewords incrementally and provides tools for analyzing and testing code equivalence under permutations. 
+The application implements algorithms for computing leader codewords incrementally and provides tools for analyzing and testing code equivalence under permutations.
+
+## Try it Online with GitPod
+
+Run this project immediately in your browser without any local setup:
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/gussttaav/GBLA_LC)
 
 
 ## Features

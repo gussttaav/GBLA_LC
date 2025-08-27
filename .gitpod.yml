@@ -1,0 +1,26 @@
+tasks:
+  - name: Build GBLA Project
+    init: |
+      echo "🔨 Building GBLA Linear Codes project..."
+      make debug
+      echo "✅ Debug build completed successfully!"
+      echo "📁 Executable created at: bin/Debug/GBLA"
+    command: |
+      echo "🚀 GBLA Project is ready!"
+      echo ""
+      echo "📋 Available commands:"
+      echo "  make debug           - Build debug version"
+      echo "  make release         - Build release version"
+      echo "  make clean          - Clean build artifacts"
+      echo "  ./bin/Debug/GBLA    - Run the application"
+      echo ""
+      echo "📝 Next steps:"
+      echo "1. Create codes.txt file with your linear codes"
+      echo "2. Run ./bin/Debug/GBLA to start the application"
+      echo ""
+      ls -la
+
+vscode:
+  extensions:
+    - ms-vscode.cpptools
+    - ms-vscode.cmake-tools
